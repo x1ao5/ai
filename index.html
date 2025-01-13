@@ -25,10 +25,11 @@
       color: #58a6ff;
       text-decoration: none;
       margin: 0 15px;
-      transition: color 0.3s;
+      transition: color 0.3s, transform 0.3s;
     }
     header a:hover {
       color: #1f6feb;
+      transform: scale(1.1);
     }
     .hero {
       text-align: center;
@@ -38,13 +39,27 @@
     .hero h1 {
       font-size: 3rem;
       margin-bottom: 20px;
+      animation: fadeIn 2s ease-in-out;
     }
     .hero p {
       font-size: 1.2rem;
+      animation: fadeIn 2s ease-in-out 0.5s;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
     .section {
       padding: 50px 20px;
       border-bottom: 1px solid #30363d;
+      transition: transform 0.3s;
+    }
+    .section:hover {
+      transform: translateY(-5px);
     }
     .team, .portfolio {
       display: flex;
@@ -59,6 +74,11 @@
       padding: 20px;
       width: 300px;
       text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
     .card img {
       border-radius: 50%;
@@ -76,9 +96,11 @@
       color: #58a6ff;
       margin: 0 10px;
       text-decoration: none;
+      transition: color 0.3s, transform 0.3s;
     }
     .footer a:hover {
       color: #1f6feb;
+      transform: scale(1.1);
     }
   </style>
 </head>
@@ -154,9 +176,9 @@
 
   <footer class="footer">
     <p>&copy; 2025 AIx5z. All rights reserved.</p>
-    <a href="https://x.com/home">Twitter</a>
-    <a href="#">LinkedIn</a>
-    <a href="#">Contact Us</a>
+    <a href="#" class="fab fa-twitter" aria-label="Twitter"></a>
+    <a href="#" class="fab fa-linkedin" aria-label="LinkedIn"></a>
+    <a href="#" class="fas fa-envelope" aria-label="Contact Us"></a>
   </footer>
 </body>
 </html>
